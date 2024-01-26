@@ -1,7 +1,9 @@
 $(document).ready(function() {
     alphabets = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+
+    addRandomBlocks();
     
-    $("#activateBlocks").on("click", function() {
+    function addRandomBlocks() {
         $('.block').remove();
         // Randomly select three block divs
         var selectedIndexes = [];
@@ -14,12 +16,12 @@ $(document).ready(function() {
         }
 
         addActiveBlocks(selectedIndexes);
-    });
+        initializeSortable(); // Make the active blocks draggable
+    }
 
     // Function to add only the selected and shuffled blocks
     function addActiveBlocks(indexes) {
         for (var i = 0; i < indexes.length; i++) {
-            console.log(indexes);
             $('#blocksContainer').append('<div class="block active">' + alphabets[indexes[i]] + '</div>')
         }
         $('.active').show();
@@ -27,5 +29,13 @@ $(document).ready(function() {
 
     function getRandomIndex() {
         return Math.floor(Math.random() * 26);
+    }
+
+    // Function to make the active blocks draggable
+    function initializeSortable() {
+        var sortable = new Sortable(document.getElementById('blocksContainer'), {
+            animation: 150, 
+            ghostClass: 'sortable-ghost', 
+        });
     }
 });

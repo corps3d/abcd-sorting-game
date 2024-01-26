@@ -25,13 +25,14 @@ body {
 
 #activateBlocks {
     margin: 15px;
-    padding: 20px 40px;
-    background-color: #1f70e1;
-    border-radius: 10px;
+    font-size: 24px;
+    padding: 5px 30px;
+    background-color: #209026;
+    border-radius: 5px;
     color: white;
 }
 
 #activateBlocks:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-
+    cursor: pointer;
 }
