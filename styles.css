@@ -1,38 +1,63 @@
 body {
-    margin: 15%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    margin: 10%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .container {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
 .block {
-    padding: 10px 27px;
+    padding: 1% 3%;
     font-weight: 700;
-    font-size: 36px;
+    margin: 0 3%;
+    font-size: 5rem;
     text-align: center;
-    border: 1px solid #ffffff;
+    border: 0.1em solid #ffffff;
     color: white;
     background-color: rgb(43, 43, 209);
     border-radius: 10%;
 }
 
-#activateBlocks {
-    margin: 15px;
-    font-size: 24px;
-    padding: 5px 30px;
+.block:first-child {
+    margin-left: 0;
+}
+
+.button {
+    margin: 2% 0; 
+    font-size: 2.4vw; 
+    padding: 0.5% 3%; 
     background-color: #209026;
     border-radius: 5px;
     color: white;
+    width: 20%;
+    text-align: center;
 }
 
-#activateBlocks:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+.button:hover {
+    box-shadow: 0 0 1vw 0 rgba(38, 37, 37, 0.6); 
     cursor: pointer;
 }
+
+.message {
+    font-size: 6.5vw; 
+    font-weight: bold;
+    padding: 1%; 
+    font-stretch: extra-expanded;
+    color: rgb(56, 121, 56);
+    background-color: #fff;
+    border: 0.2em solid rgb(56, 121, 56);
+}
+
+.tick {
+    color: rgb(56, 121, 56);
+}
+
+.wmessage {
+    border: 0.01em solid #918c8c;
+    margin-top: 1%;
+    padding: 0.5% 2%; 
+}
+
