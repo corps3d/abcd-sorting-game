@@ -11,6 +11,7 @@ $(document).ready(function() {
         $('#submit').show();
         $('#wsubmit').hide();
         $('.wmessage').remove();
+        $('.wheading').remove();
         addRandomBlocks();
     });
 
@@ -77,13 +78,13 @@ $(document).ready(function() {
     function correctAnswer() {
         $('.block').remove();
         $('#submit').hide();
-        // Array of appreciative words
+        
         var appreciativeWords = ['Excellent!', 'Fantastic!', 'Awesome!', 'Great Job!', 'Well Done!'];
     
-        // Pick a random appreciative word
+        
         var randomAppreciation = appreciativeWords[Math.floor(Math.random() * appreciativeWords.length)];
     
-        // Display correct answer message
+        
         var message = '<div class="message">' +
                       '<span class="tick">&#10004;</span>' +
                       '<span>&nbsp;</span>'+
@@ -101,17 +102,18 @@ $(document).ready(function() {
     }
 
     function wrongAnswer(originalOrder) {
+        let userOrder = getUserOrder();
         $('#submit').hide();
         $('#wsubmit').show();
         $('.block').remove();
 
-        $('#wrongAnswer').append('<h1 class="wmessage wheading">Sorry, incorrect...</h1>');
+        $('#wrongAnswer').append('<h1 class="wheading">Sorry, incorrect...</h1>');
         
         // Display original order
         displayOrder(originalOrder, "The Question");
     
         // Display user's order
-        displayOrder(getUserOrder(), "Your Answer");
+        displayOrder(userOrder, "Your Answer");
     
         // Provide step-by-step guidance
         stepByStepGuidance(originalOrder);
@@ -137,7 +139,7 @@ $(document).ready(function() {
         $('.block').each(function() {
             userOrder.push($(this).text());
         });
-    
+        console.log(userOrder);
         return userOrder;
     }
     
