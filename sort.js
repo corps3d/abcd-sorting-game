@@ -4,7 +4,14 @@ $(document).ready(function() {
     order = []
 
     addRandomBlocks();
-    initializeSortable();
+    $('#blocksContainer').sortable({
+        connectWith: '#blocksContainer',
+        tolerance: 'pointer',
+        scroll: true,
+        revert: 100,
+        delay: 0,
+    });
+
     $('#wsubmit').hide();
 
     $('#wsubmit').on('click', function(){
@@ -68,12 +75,12 @@ $(document).ready(function() {
         return Math.floor(Math.random() * 26);
     }
 
-    function initializeSortable() {
-        var sortable = new Sortable(document.getElementById('blocksContainer'), {
-            animation: 150, 
-            ghostClass: 'sortable-ghost', 
-        });
-    }
+    // function initializeSortable() {
+    //     var sortable = new Sortable(document.getElementById('blocksContainer'), {
+    //         animation: 150, 
+    //         ghostClass: 'sortable-ghost', 
+    //     });
+    // }
 
     function correctAnswer() {
         $('.block').remove();
