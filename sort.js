@@ -116,13 +116,10 @@ $(document).ready(function() {
 
         $('#wrongAnswer').append('<h1 class="wheading">Sorry, incorrect...</h1>');
         
-        // Display original order
         displayOrder(originalOrder, "The Question");
     
-        // Display user's order
         displayOrder(userOrder, "Your Answer");
-    
-        // Provide step-by-step guidance
+
         stepByStepGuidance(originalOrder);
 
         displayOrder(order.sort(), "Solution");
