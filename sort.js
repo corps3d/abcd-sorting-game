@@ -7,10 +7,10 @@ $(document).ready(function() {
     $('#blocksContainer').sortable({
         connectWith: '#blocksContainer',
         tolerance: 'pointer',
-        scroll: true,
         revert: 100,
         delay: 0,
     });
+    $("#blocksContainer").disableSelection();
 
     $('#wsubmit').hide();
 
